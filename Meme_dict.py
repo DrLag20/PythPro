@@ -1,15 +1,14 @@
-meme_dict = {
-    "LOL": "Una respuesta a algo gracioso",
-    "CRINGE": "Algo excepcionalmente raro o embarazoso",
-    "ROFL": "Una respuesta a una broma",
-    "SHEESH": "Ligera desaprobación",
-    "CREEPY": "Aterrador, siniestro",
-    "AGGRO": "Ponerse agresivo/enojado"
-}
+modern_dict = {
+            "CRINGE": "Algo excepcionalmente raro o embarazoso.",
+            "LOL": "Una respuesta común a algo gracioso.",
+            "ROFL": "ROFL se utiliza como reacción a algo gracioso, similar a LOL.",
+            "CREEPY": "Aterrador, siniestro.",
 
-word = input("\nEscribe una palabra que no entiendas (EN MAYÚSCULAS): ")
+            } 
 
-if word in meme_dict:
-        print(f"{word}: {meme_dict[word]}")
+word = input("Escribe una palabra moderna que no entiendas (EN MAYÚSCULAS):")
+
+if word in modern_dict.keys():
+    print(modern_dict[word])
 else:
-        print("Lo siento, no conozco esa palabra."
+    print("Esta palabra aún no está en la base de datos.")
