@@ -30,6 +30,10 @@ async def on_message(message):
         await message.channel.send(flip_coin())
     elif message.content.startswith('$pass'):
         await message.channel.send(gen_pass(10))
+    elif message.content.startswith('$userinfo'):
+        user_id = message.author.id
+        user = await client.fetch_user(user_id)
+        await message.channel.send(f'Usuario: {user.name} , id: {user.id}')
     else:
         await message.channel.send("No puedo procesar este comando, lo siento!")
 
