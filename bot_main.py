@@ -24,6 +24,12 @@ async def on_message(message):
         return
     if message.content.startswith('$hello'):
         await message.channel.send('¡Hola! Soy un bot')
+    elif message.content.startswith('$help'):
+        await message.channel.send('Comandos disponibles: [$help], el bot proporciona la lista de comandos disponibles.')
+        await message.channel.send('[$smile], el bot reacciona con un emoji sonriente.')
+        await message.channel.send('[$coin], el bot selecciona uno de los dos lados de la moneda.')
+        await message.channel.send('[$pass], el bot genera una contraseña de 10 dígitos.')
+        await message.channel.send('[$userinfo], el bot proporciona información del usuario.')
     elif message.content.startswith('$smile'):
         await message.channel.send(gen_emodji())
     elif message.content.startswith('$coin'):
