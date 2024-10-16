@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 import random
+import os
 from bot_settings import settings
 
 intents = discord.Intents.default()
@@ -14,14 +15,12 @@ async def on_ready():
 
 @bot.command()
 async def ayuda(ctx):
-    await ctx.send("Los comandos disponibles son: [!ayuda], muestra los comandos disponibles.")
-    await ctx.send("[!bolsa], dice cuánto tiempo tarda una bolsa de plástico en descomponerse.")
-    await ctx.send("[!botella], dice cuánto tiempo tarda una botella de plástico en descomponerse.")
-    await ctx.send("[!plato], dice cuánto tiempo tarda un plato de plástico en descomponerse.")
-    await ctx.send("[!cepillo], dice cuánto tiempo tarda un cepillo de dientes en descomponerse.")
-    await ctx.send("[!sorbete], dice cuánto tiempo tarda un sorbete de plástico en descomponerse.")
-    await ctx.send("[!cubiertos], dice cuánto tiempo tardan los cubiertos de plástico en descomponerse.")
-    await ctx.send("[!tapa], dice cuánto tiempo tarda una tapa de plástico en descomponerse.")
+    img_name = "comandos.png"
+    with open(f'Comandos/{img_name}', 'rb') as f:
+
+        picture = discord.File(f)
+
+    await ctx.send(file=picture)
 
 @bot.command()
 async def bolsa(ctx):
